@@ -3,12 +3,11 @@ package ru.ars2014.lab1_2;
 import java.util.Scanner;
 
 public class Lab2 {
-    public static final int N = 47;
     public static final Scanner in = new Scanner(System.in);
     public static HashTable<Integer> hashTable;
 
     public static void main(String[] args) {
-        hashTable = Lab1.generateIntHashTable(N, false);
+        hashTable = Lab1.generateIntHashTable(Lab1.N, false);
         System.out.println();
 
         System.out.println("Начальная таблица:");

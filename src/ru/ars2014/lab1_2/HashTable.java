@@ -116,7 +116,7 @@ public class HashTable<T> {
     }
 
     public Node<T>[] getData() {
-        return data.clone();
+        return data;
     }
 
     public static class Node<R> {
