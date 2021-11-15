@@ -6,13 +6,13 @@ public class Lab1 {
     public static final int N = 47;
     public static final int L = 6;
     public static final int TERM_WIDTH = 120;
-    public static final int ELEMS_PER_LINE = TERM_WIDTH / (L + 1);
-    public static final int ELEMS_PER_LINE_HASH = TERM_WIDTH / (L + 9);
+    public static final int ELEMS_PER_LINE = TERM_WIDTH / (L + 3);
+    public static final int ELEMS_PER_LINE_HASH = TERM_WIDTH / (L + 12);
 
     public static final int MIN = (int) Math.pow(10, L - 1);
     public static final int MAX = (int) Math.pow(10, L) - 1;
 
-    private static final Random rand = new Random();
+    public static final Random rand = new Random();
 
     public static void main(String[] args) {
         HashTable<Integer> hashTable = generateIntHashTable(N, true);
@@ -64,7 +64,7 @@ public class Lab1 {
         }
 
         System.out.println();
-        System.out.println("Среднее количество шагов: " + (double) hashTable.STEPS / hashTable.getLength());
+        System.out.println("Среднее количество шагов: " + HashTable.STEPS.stream().mapToDouble(Integer::doubleValue).average().orElse(0.0));
         System.out.println("Коэффициент заполнения таблицы: " + (double) hashTable.getLength() / hashTable.getCapacity());
     }
 }
